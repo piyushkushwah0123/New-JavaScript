@@ -162,7 +162,7 @@
 // })()
 
 
-// 5. Arrow Function
+// 5. Arrow Function :- Bind nhi hota h this ke sath
 
 // let a = (a,b) => {
 //   return  a + b 
@@ -204,3 +204,123 @@
 // abc("amit" , function mno(){
 //   console.log("hello");
 // })
+
+// function abc(){
+//     console.log("Hello");
+    // return undefined(value)                       => Waps call krte h toh undefined 
+// }
+// console.log(abc());
+
+
+// console.log(a)
+// var a = 10;                     // In case in let there will be an error  
+
+
+// let a = 10
+
+// console.log("hello a");
+// console.log('hello a');
+
+// console.log(`hello ${a}`);
+
+
+// function abc(){
+//     alert("hello javascript")
+
+//     let a = prompt("Enter your email");
+//     console.log(a);
+// }
+
+
+// function abc(){
+//     var a =10
+// let b = 20
+// const c =30
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+// abc()
+
+
+// Block Scope:-
+
+
+// if(true){
+// var a =10
+//  let b = 20
+//  const c =10
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// }
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+
+// function abc(callback){
+//     console.log("hello abc");
+// callback()
+// }
+
+// function mno(){
+//  console.log("hello mno");
+// }
+
+// abc(mno)
+
+
+// NUMBER METHOD :-
+
+// 1. Number 
+
+// let a = Number(5);
+// let b = Number("55");
+
+// console.log(a);
+// console.log(b);
+
+// 2. parseInt() :- String convert in integer number 
+
+// let a = parseInt("10.33");
+// let b = parseInt("10.33px");
+// let c = parseInt("abc10");
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// 3. parseFloat() :- String convert in decimal Number 
+
+// let a = parseFloat("10.33");
+// let b = parseFloat("10.33px");
+// let c = parseFloat("abc10");
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+
+// 4. tofixed() :- decimal ke baad kitna digit return krna h
+
+// let a = 10.555
+
+// console.log(a.toFixed(2));
+// console.log(a.toFixed(3));
+// console.log(a.toFixed(5));
+// console.log(a.toFixed(4));
+// console.log(a.toFixed(6));
+
+// 5. toPrecision() :- Returns a string containing a number
+
+// let a = 10.555
+
+// console.log(a.toPrecision(2));
+// console.log(a.toPrecision(3));
+// console.log(a.toPrecision(5));
+// console.log(a.toPrecision(4));
+// console.log(a.toPrecision(6));
+
+
