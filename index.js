@@ -313,6 +313,7 @@
 // console.log(a.toFixed(4));
 // console.log(a.toFixed(6));
 
+
 // 5. toPrecision() :- Returns a string containing a number
 
 // let a = 10.555
@@ -323,4 +324,17 @@
 // console.log(a.toPrecision(4));
 // console.log(a.toPrecision(6));
 
+
+// 6. toString() :-  Number ko  String m convert
+
+// let a = 10
+// console.log(typeof a)
+// let result = a.toString()
+// console.log(typeof result);
+
+
+// 7. valueOf() :- 
+
+let a = new Number(5)
+console.log(typeof a.valueOf);
 
