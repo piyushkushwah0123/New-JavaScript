@@ -335,6 +335,191 @@
 
 // 7. valueOf() :- 
 
-let a = new Number(5)
-console.log(typeof a.valueOf);
+// let a = new Number(5)
+// console.log(typeof a.valueOf);
+
+// 8.  isfinite():- 
+
+// let a= 10
+// console.log(Number.isFinite(a));
+
+
+// 9. isInteger():-
+
+// let a= 10
+// console.log(Number.isInteger(10));
+// console.log(Number.isInteger(-10));
+// console.log(Number.isInteger(10.55));
+
+
+// 10. isNan();
+
+// let a= 10
+// console.log(Number.isNaN(10));
+
+
+// Math Object Methods 
+//1. Math.round()
+
+// let a = 10.55
+// console.log(Math.round(a));
+// console.log(Math.round(2.10));
+
+
+// 2. Math.ceil()
+
+// console.log(Math.ceil(10.5));
+// console.log(Math.ceil(10.1));
+// console.log(Math.ceil(10.9));
+// console.log(Math.ceil(- 10.1));
+
+
+// 3. Math.floor()
+
+// console.log(Math.floor(10.1));
+// console.log(Math.floor(10.5));
+// console.log(Math.floor(10.9));
+// console.log(Math.floor(- 10.1));
+
+
+// 4. Math.random()
+
+// console.log(Math.random());
+// console.log(Math.random());
+// console.log(Math.random());
+// console.log(Math.random());
+
+// console.log(Math.floor(Math.random() * 10 )+ 1);
+// console.log(Math.floor(Math.random() * 9000 )+ 1000);
+// console.log(Math.floor(Math.random() * 900 )+ 100);
+// console.log(Math.floor(Math.random() * 90 )+ 10);
+
+// Generate number between 151 to 200
+// console.log(Math.floor(Math.random() * 50 )+ 151);
+
+
+// 5. Math.max()
+
+// console.log(Math.max(10, 20 ,30 ,40, 50));
+
+
+// 6. Math.min()
+
+// console.log(Math.min(10, 20 ,30 ,40, 50));
+
+
+// 7. Math.trunc()
+
+// console.log(Math.trunc(10));
+// console.log(Math.trunc(10.55));
+// console.log(Math.trunc(- 10.3));
+
+
+// 8. Math.power();
+
+// console.log(2**4);
+// console.log(Math.pow(2,4));
+
+// console.log(15**10);
+// console.log(Math.pow(15,10));
+
+
+// 9. Square root()
+
+// console.log(Math.sqrt(7));
+// console.log(Math.sqrt(21));
+// console.log(Math.sqrt(30));
+
+
+// 10. Cube root()
+
+//  console.log(Math.cbrt(8));
+//  console.log(Math.cbrt(64));
+//  console.log(Math.cbrt(25));
+
+
+// 11. Math.abs()
+
+// console.log(Math.abs(10));
+// console.log(Math.abs(10.5));
+// console.log(Math.abs(- 10));
+// console.log(Math.abs(- 10.5));
+// console.log(Math.abs(0));
+
+
+// 12. Math.sign()
+
+// console.log(Math.sign(10));
+// console.log(Math.sign(-10));
+// console.log(Math.sign(0));
+
+
+// String :- 
+
+// let a = 10
+// console.log("hello js a")
+// console.log(`hello js ${a}`);   // Template literal
+
+// let str = 'Hello Javacript';
+// let str = "Hello Javacript";
+
+// STRING METHODS :-
+
+// 1. length
+// let str = "Hello Javacript";
+// console.log(str.length);
+
+
+// 2. toUppercase()
+
+// let str = "Hello Javacript";
+// console.log(str.toUpperCase());
+
+
+// 3. toUppercase()
+
+//  let str = "Hello Javacript";
+//  console.log(str.toLowerCase());
+
+
+// 4. trim()
+
+//  let str = "   Hello Javacript     ";
+//  console.log(str.trim());
+
+
+// 5. trimStart()
+
+
+// 6. trimEnd()
+
+
+// 7. slice() :- Negavtive indexing ko support krta h 
+
+// let str = "hello Javacript";
+// let result= str.slice(0,5);
+// console.log(result);
+
+// let str = "hello javascript";
+// let result= str.slice(-10,-6);
+// console.log(result);
+
+// let str = "hello javascript";
+// let result= str.slice(-10);
+// console.log(result);
+
+
+// 8. subString() :- negative indexing support nhi krta 
+
+// let str = "hello javascript";
+// let result= str.substring(6);
+// console.log(result);
+
+
+// 9. substr()                      // Debricate
+
+//  let str = "hello javascript";
+//  let result= str.substr(6,4);
+//  console.log(result);
+
 
