@@ -523,3 +523,117 @@
 //  console.log(result);
 
 
+// 10. charat()
+
+// let str = "javascript";
+// console.log(str.charAt(0));
+
+// let str = "java";
+// console.log(str.charAt(5));
+
+
+// 11. at()
+
+// let str = "java";
+// console.log(str.at(3));
+
+// let str = "java";
+// console.log(str.at(5));           // Undefined
+
+
+// 12. charCodeAt()
+
+// let str = "java";
+// console.log(str.charCodeAt(3));    // unique value 
+
+// let str = "java";
+// console.log(str.charCodeAt(5));       // NaN
+
+
+// 13. indexOf()
+
+// let str = "javascript";
+// console.log(str.indexOf("s"));
+
+// let str = "java";
+// console.log(str.indexOf("s"));          // -1
+
+
+// 14. lastIndexOf()
+
+// let str = "javascript";
+// console.log(str.lastIndexOf("a"));  
+// console.log(str.lastIndexOf("s"));
+
+
+// 15.includes()
+
+// let str = "javascript";
+// console.log(str.includes("a"));             // return boolean    
+
+
+// 16. startwith()
+
+// let str = "javascript";
+// console.log(str.startsWith("a")); 
+
+// let str = "javascript";
+// console.log(str.endsWith("t")); 
+
+
+// 17. replace()
+
+//  let str = "javascript";
+//  console.log(str.replace("javascript","java")); 
+
+//  let str = "java";
+//  console.log(str.replace("j","h")); 
+
+
+// 18. replaceAll()
+
+// let str = "javascript";
+// console.log(str.replaceAll("a","v"));
+
+
+// 19. split()
+
+// let str = "javascript";
+// console.log(str.split(""));     // String convert in Array
+
+// let str = "hello,javascript";
+// console.log(str.split(","));
+
+
+// 20. concat()
+
+// let str1 = "hello";
+// let str2 = "javascript";
+// let str3 = "world";
+
+// let str4 = str1.concat(str2,str3)
+// console.log(str4);
+
+
+// 21. repeat()
+
+// let str = "javascript";
+// console.log(str.repeat(2));
+
+// Ques :- Conver first letter in UpperCase
+
+// let str1 = "hello";
+// let str2 = "javascript";
+
+// str1 = str1.charAt(0).toUpperCase() + str1.slice(1);
+// str2 = str2.charAt(0).toUpperCase() + str2.slice(1);
+
+// console.log(str1);
+// console.log(str2);
+
+
+// let str = "Piyushkushwah@002gmail.com";
+
+// str = str.replace("Piyushkushwah@002gmail.com" , "Piy*********@002gmail.com")
+// console.log(str);
+
