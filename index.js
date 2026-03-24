@@ -1,5 +1,7 @@
 // console.log("Hello javascript");
 
+const { useCallback } = require("react")
+
 
 // a= 10
 
@@ -636,4 +638,117 @@
 
 // str = str.replace("Piyushkushwah@002gmail.com" , "Piy*********@002gmail.com")
 // console.log(str);
+
+
+// Array :-
+
+// let arr = [10,200,30,40,50]
+// let arr= new Array (1,2,3,)
+// console.log(arr);
+
+
+// let arr =  [10,20,30,40,50]
+// arr [10] = 60
+// console.log(typeof arr);
+// console.log(arr.length);
+
+
+// let arr =  [10,20,30,40,50]
+// console.log(Array.isArray(arr));
+
+
+// let arr = "10"
+// console.log(Array.isArray(arr));
+
+
+// Array Methods :-
+
+// 1. push()  :- last index
+
+// let arr =  [10,20,30,40,50]
+// let result = arr.push(60)
+// console.log(arr);
+// console.log(result);
+
+
+// 2. pop()  :- last index
+
+
+// 3. shift()
+
+
+// 4. unshift() :-  
+
+
+// 5. slice() :- add amd delete ( Support negative indexing )
+
+
+// 6. join() :- convert 
+
+
+// 7. sort() :-  used to sort the element pf an array in place and return in sorted array
+
+// let arr =  [11,2,16,4,21]
+// let arr1 = ["m","f","z","a"]        
+// let result = arr.sort((a,b) => a-b)
+// console.log(arr);                             
+
+
+// let arr = [30,40,50,10,20]
+// for(let i=0;i<=arr.length;i++){
+//     for(let j=0; j<=arr.length;j++){
+//        if(arr[j]>arr[j+1]) {
+//         let temp = arr[j]
+//         arr[j]=arr[j+1]
+//         arr[j+1]= temp;
+//        }
+//     }
+// }
+// console.log(arr);
+
+
+// 8. Concate()  := merge and add 
+
+
+// 9. some()
+
+
+// 10. map() :-  Transfrom or modify
+
+// let arr = [30,40,50,10,20]
+// let result =  arr.map(val => val * val)
+// console.log(result);
+
+
+// 11. filter() 
+
+
+// 12. reduce()
+
+// let arr = [10,20,30,40,50]
+
+// let result = arr.reduce((acc , curr) => {
+//     return acc + curr
+// }, 0)  
+// console.log(result); 
+
+
+// Object :- It is a data type used to store multiple values in a single variable on the form of key - value pair.
+//           It is a collection of properties 
+
+
+// nullish( ?? ) :- null  ya undefined h toh right part chalega , inke alawa kuch bhi ho left part chalega.
+
+// let a = null
+// console.log(a ?? "N/A");
+
+// let a = 1
+// console.log(a ?? "N/A");
+
+// let a = false
+// console.log(a ?? "N/A");
+
+// let a = 10
+// console.log(a || "N/A");
+// console.log(a && "N/A");
 
