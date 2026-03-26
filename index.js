@@ -752,3 +752,122 @@ const { useCallback } = require("react")
 // console.log(a || "N/A");
 // console.log(a && "N/A");
 
+
+// async await :- async return promise and await handle that
+
+// async function abc(){
+//     return "hello"
+// }
+
+// console.log(abc());
+
+
+// function getData(){
+//     setTimeout(() => {
+//         console.log("data fetch successsfully")
+//     }, 1000);
+// }
+
+// async function abc(){
+// console.log("start")
+
+//     let result = await getData()
+//     console.log(result);
+
+//     console.log("end");
+// }
+// console.log(abc());
+
+
+// Fetch Api :- return promise
+
+// async function fetchData(){
+//     let result = fetch("https://jsonplaceholder.typicode.com/todos")
+//     console.log(result);
+// }
+// fetchData
+
+
+
+// let json = {
+//     "name" :"abc",
+//     "age" : 25,
+//     "role" : "student"
+// }
+
+
+// let obj = {
+//     name :"abc",
+//     age : 25,
+//     role : "student"
+// }
+
+// let obj1 = JSON.stringify(obj)
+
+// console.log(obj1);
+
+
+async function fetchData() {
+    let result = await fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: "mukesh"
+        })
+    });
+
+    let updatedData = await result.json();
+    console.log(updatedData);
+}
+fetchData();
+
+
+// localStorage :- 
+
+
+// let obj =  {
+//     name :"abc",
+//     age:25
+// }
+// let result = JSON.stringify(obj)
+
+// localStorage.setItem("user" , result);
+// localStorage.setItem("product" , "mobile")
+
+// // localStorage.removeItem("product")
+
+// console.log(localStorage.getItem("user"));
+
+
+// sessionStorage :- 
+
+// let obj =  {
+//     name :"abc",
+//     age:25
+// }
+// let result = JSON.stringify(obj)
+
+// sessionStorage.setItem("user" , result);
+// sessionStorage.setItem("product" , "mobile")
+// sessionnStorage.removeItem("product")
+
+// console.log(sessionStorage.getItem("user"));
+
+
+async function fetchData() {
+    let result = await fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: "mukesh"
+        })
+    });
+
+    let updatedData = await result.json();
+    console.log(updatedData);
+}
+fetchData();
