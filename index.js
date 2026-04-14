@@ -807,21 +807,21 @@ const { useCallback } = require("react")
 // console.log(obj1);
 
 
-async function fetchData() {
-    let result = await fetch("https://jsonplaceholder.typicode.com/todos", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: "mukesh"
-        })
-    });
+// async function fetchData() {
+//     let result = await fetch("https://jsonplaceholder.typicode.com/todos", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             name: "mukesh"
+//         })
+//     });
 
-    let updatedData = await result.json();
-    console.log(updatedData);
-}
-fetchData();
+//     let updatedData = await result.json();
+//     console.log(updatedData);
+// }
+// fetchData();
 
 
 // localStorage :- 
@@ -856,18 +856,373 @@ fetchData();
 // console.log(sessionStorage.getItem("user"));
 
 
-async function fetchData() {
-    let result = await fetch("https://jsonplaceholder.typicode.com/todos", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: "mukesh"
-        })
-    });
+// async function fetchData() {
+//     let result = await fetch("https://jsonplaceholder.typicode.com/todos", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             name: "mukesh"
+//         })
+//     });
 
-    let updatedData = await result.json();
-    console.log(updatedData);
-}
-fetchData();
+//     let updatedData = await result.json();
+//     console.log(updatedData);
+// }
+// fetchData();
+
+
+const db = {
+
+  users: [
+    {
+      userId: 1,
+      name: "Rahul Sharma",
+      email: "rahul@gmail.com",
+      role: "customer",
+      address: {
+        city: "Delhi",
+        state: "Delhi",
+        country: "India",
+        pincode: 110001
+      },
+      cart: [
+        { productId: 1, quantity: 1 },
+        { productId: 4, quantity: 2 }
+      ],
+      wishlist: [2, 3],
+      orders: ["ORD1001", "ORD1002"]
+    },
+
+    {
+      userId: 2,
+      name: "Priya Singh",
+      email: "priya@gmail.com",
+      role: "customer",
+      address: {
+        city: "Mumbai",
+        state: "Maharashtra",
+        country: "India",
+        pincode: 400001
+      },
+      cart: [
+        { productId: 2, quantity: 1 }
+      ],
+      wishlist: [1],
+      orders: ["ORD1003"]
+    }
+  ],
+
+  categories: [
+    {
+      categoryId: 1,
+      name: "Electronics",
+      parentCategory: null
+    },
+    {
+      categoryId: 2,
+      name: "Accessories",
+      parentCategory: 1
+    },
+    {
+      categoryId: 3,
+      name: "Furniture",
+      parentCategory: null
+    }
+  ],
+
+  vendors: [
+    {
+      vendorId: 1,
+      name: "TechWorld",
+      rating: 4.5,
+      location: "Bangalore"
+    },
+    {
+      vendorId: 2,
+      name: "HomeStore",
+      rating: 4.2,
+      location: "Jaipur"
+    }
+  ],
+
+  products: [
+    {
+      productId: 1,
+      name: "Laptop",
+      price: 65000,
+      brand: "Dell",
+      categoryId: 1,
+      vendorId: 1,
+      stock: 10,
+      specifications: {
+        ram: "16GB",
+        storage: "512GB SSD",
+        processor: "Intel i7"
+      },
+      rating: 4.6
+    },
+
+    {
+      productId: 2,
+      name: "Smartphone",
+      price: 30000,
+      brand: "Samsung",
+      categoryId: 1,
+      vendorId: 1,
+      stock: 20,
+      specifications: {
+        ram: "8GB",
+        storage: "128GB",
+        battery: "5000mAh"
+      },
+      rating: 4.4
+    },
+
+    {
+      productId: 3,
+      name: "Headphones",
+      price: 5000,
+      brand: "Sony",
+      categoryId: 2,
+      vendorId: 1,
+      stock: 15,
+      specifications: {
+        type: "Wireless",
+        noiseCancellation: true
+      },
+      rating: 4.5
+    },
+
+    {
+      productId: 4,
+      name: "Office Chair",
+      price: 12000,
+      brand: "GreenSoul",
+      categoryId: 3,
+      vendorId: 2,
+      stock: 8,
+      specifications: {
+        material: "Mesh",
+        adjustableHeight: true
+      },
+      rating: 4.2
+    }
+  ],
+
+  orders: [
+    {
+      orderId: "ORD1001",
+      userId: 1,
+      orderDate: "2026-03-01",
+      items: [
+        { productId: 1, quantity: 1 },
+        { productId: 3, quantity: 2 }
+      ],
+      payment: {
+        method: "UPI",
+        status: "Paid"
+      },
+      delivery: {
+        status: "Delivered",
+        date: "2026-03-05"
+      },
+      coupon: "DISC10"
+    },
+
+    {
+      orderId: "ORD1002",
+      userId: 1,
+      orderDate: "2026-03-07",
+      items: [
+        { productId: 4, quantity: 1 }
+      ],
+      payment: {
+        method: "Credit Card",
+        status: "Paid"
+      },
+      delivery: {
+        status: "Shipped",
+        expected: "2026-03-12"
+      }
+    },
+
+    {
+      orderId: "ORD1003",
+      userId: 2,
+      orderDate: "2026-03-08",
+      items: [
+        { productId: 2, quantity: 1 }
+      ],
+      payment: {
+        method: "COD",
+        status: "Pending"
+      },
+      delivery: {
+        status: "Processing"
+      }
+    }
+  ],
+
+  reviews: [
+    {
+      reviewId: 1,
+      userId: 1,
+      productId: 1,
+      rating: 5,
+      comment: "Excellent laptop",
+      date: "2026-03-06"
+    },
+    {
+      reviewId: 2,
+      userId: 2,
+      productId: 2,
+      rating: 4,
+      comment: "Good phone",
+      date: "2026-03-09"
+    }
+  ],
+
+  coupons: [
+    {
+      code: "DISC10",
+      discount: 10,
+      type: "percentage",
+      expiry: "2026-12-31"
+    }
+  ],
+
+  inventory: [
+    {
+      productId: 1,
+      warehouse: "Delhi",
+      stock: 10
+    },
+    {
+      productId: 2,
+      warehouse: "Mumbai",
+      stock: 20
+    },
+    {
+      productId: 3,
+      warehouse: "Bangalore",
+      stock: 15
+    },
+    {
+      productId: 4,
+      warehouse: "Jaipur",
+      stock: 8
+    }
+  ]
+
+};
+
+// Section 1: Basic Questions
+
+// Ques :- 1. Get all users' names.
+// const userNames = db.users.map(user => user.name);
+// console.log(userNames);
+
+
+// Ques :- 2. Find user with userId = 1.
+// const user = db.users.find(u => u.userId === 1);
+// console.log(user);
+
+
+// Ques :- 3. Get all products with price greater than 10,000.
+// const product = db.products.filter(p => p.price > 10000);
+// console.log(product);
+
+
+// Ques :- 4. List all categories names.
+// const names = db.categories.map(c => c.name);
+// console.log(names);
+
+
+// Ques :- 5. Find all vendors with rating above 4.3.
+// const vendor = db.vendors.filter(v => v.rating > 4.3);
+// console.log(vendor);
+
+
+// Ques :- 6. Get all products with stock less than 10.
+// const product = db.products.filter(p => p.stock  < 10);
+// console.log(product);
+
+
+// Ques :- 7. Find all users from "Delhi".
+// const city = db.users.filter(u => u.address.city === "Delhi");
+// console.log(city);
+
+
+// Ques :- 8. Get all orders with status "Delivered".
+// const package = db.orders.filter(o => o.delivery.status === "Delivered");
+// console.log(package);
+
+
+// Ques :- 9. Count total number of products.
+// const product = db.products.length;
+// console.log(product);
+
+
+// Ques :- 10. Get all wishlist products of user 1.
+// const user = db.users.find(u => u.userId === 1);
+// db.products.filter(p => user.wishlist.includes(p.productId));
+// console.log(user);
+
+// Section 2: Intermediate Questions
+
+// Ques :- 1. Get total cart value of user 1.
+// Ques :- 2. Find all products in "Electronics" category.
+// Ques :- 3. Get vendor name for each product.
+
+
+// Ques :- 4. Find total number of orders per user.
+// const order = db.users.map(u => ({user: u.name,totalOrders: u.orders.length}));
+// console.log(order);
+
+
+// Ques :- 5. Get all products with rating above 4.5.
+// const rating = db.products.filter(p => p.rating > 4.5);
+// console.log(rating);
+
+// Ques :- 6. Find all orders where payment method is "UPI".
+// const order = db.orders.filter(o => o.payment.method === "UPI");
+// console.log(order);
+
+
+// Ques :- 7. Get all items from order "ORD1001".
+// const order = db.orders.find(o => o.orderId === "ORD1001");
+// order.items;
+// console.log(order);
+
+
+// Ques :- 8. Find products that are out of stock.
+// const product = db.products.filter(p => p.stock === 0);
+// console.log(product);
+
+// Ques :- 9. Get all reviews for productId = 1.
+// const review = db.reviews.filter(r => r.productId === 1);
+// console.log(review);
+
+
+// Ques :- 10. Find average rating of all products.
+
+
+// Section 3: Advanced Questions
+
+// Ques :- 1. Calculate total revenue generated from all orders.
+// Ques :- 2. Get most expensive product.
+// Ques :- 3. Find most sold product (based on order quantity).
+// Ques :- 4. Get user who placed the highest number of orders.
+// Ques :- 5. Find total quantity sold per product.
+// Ques :- 6. Get top-rated product.
+// Ques :- 7. Find all products with no reviews.
+// Ques :- 8. Get all users who used a coupon.
+// Ques :- 9. Find total discount applied using coupons.
+// Ques :- 10. Get orders that are still pending delivery.
+
+
+
+
+
