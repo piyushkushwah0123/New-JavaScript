@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="name" placeholder="Name">
+<input id="brand" placeholder="Brand">
+<input id="price" placeholder="Price">
+<input id="rating" placeholder="Rating">
+
+<button onclick="add()">Add</button>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="body"></tbody>
+</table>
+
+<script>
+let products = [];
+
+function show() {
+  let data = "";
+  products.forEach((p,i)=>{
+    data += `
+      <tr>
+        <td>${p.name}</td>
+        <td>${p.brand}</td>
+        <td>${p.price}</td>
+        <td>${p.rating}</td>
+        <td>
+          <button onclick="del(${i})">❌</button>
+        </td>
+      </tr>`;
+  });
+  document.getElementById("body").innerHTML = data;
+}
+
+function add() {
+  products.push({
+    name: name.value,
+    brand: brand.value,
+    price: price.value,
+    rating: rating.value
+  });
+  show();
+}
+
+function del(i){
+  products.splice(i,1);
+  show();
+}
+</script>
+
+</body>
+</html>
