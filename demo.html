@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Table</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody id="bodydata">
+    </tbody>
+</table>
+
+<script>
+
+const db = {
+  products: [
+    { name: "Laptop", brand: "Dell", price: 65000, rating: 4.6 },
+    { name: "Smartphone", brand: "Samsung", price: 30000, rating: 4.4 },
+    { name: "Headphones", brand: "Sony", price: 5000, rating: 4.5 },
+  ]
+};
+
+let output = "";
+
+db.products
+  .filter(p => p.rating >= 4.2)
+  .forEach(p => {
+    output += `
+      <tr>
+        <td>${p.name}</td>
+        <td>${p.brand}</td>
+        <td>${p.price}</td>
+        <td>${p.rating}</td>
+      </tr>
+    `;
+  });
+
+document.getElementById("bodydata").innerHTML = output;
+
+</script>
+
+</body>
+</html>
