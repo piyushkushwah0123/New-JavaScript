@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Product Table</h3>
+
+<input id="name" placeholder="Name">
+<input id="brand" placeholder="Brand">
+<input id="price" placeholder="Price">
+<input id="rating" placeholder="Rating">
+
+<button onclick="add()">Add</button>
+
+<br><br>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="body"></tbody>
+</table>
+
+<script>
+const db = {
+  products: [
+    { name: "Laptop", brand: "Dell", price: 65000, rating: 4.6 },
+    { name: "Smartphone", brand: "Samsung", price: 30000, rating: 4.4 },
+    { name: "Headphones", brand: "Sony", price: 5000, rating: 4.5 },
+    { name: "Office Chair", brand: "GreenSoul", price: 12000, rating: 4.2 }
+  ]
+};
+
+function show() {
+  let data = "";
+  db.products.forEach((p,i)=>{
+    data += `
+      <tr>
+        <td>${p.name}</td>
+        <td>${p.brand}</td>
+        <td>${p.price}</td>
+        <td>${p.rating}</td>
+        <td><button onclick="del(${i})">❌</button></td>
+      </tr>`;
+  });
+  document.getElementById("body").innerHTML = data;
+}
+
+function add() {
+  db.products.push({
+    name: document.getElementById("name").value,
+    brand: document.getElementById("brand").value,
+    price: document.getElementById("price").value,
+    rating: document.getElementById("rating").value
+  });
+
+  document.getElementById("name").value = "";
+  document.getElementById("brand").value = "";
+  document.getElementById("price").value = "";
+  document.getElementById("rating").value = "";
+
+  show();
+}
+
+function del(i){
+  db.products.splice(i,1);
+  show();
+}
+
+show();
+</script>
+
+</body>
+</html>
